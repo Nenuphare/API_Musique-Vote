@@ -16,7 +16,7 @@ exports.listAllVote = async (req, res) => {
 
 exports.findAVote = async (req, res) => {
     try {
-        const vote = await Vote.findById({music_id: req.params.id_music});
+        const vote = await Vote.findById( req.params.id_vote);
         res.status(200).json(vote);
     } catch (error) {
         res.status(500);
