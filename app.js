@@ -5,18 +5,18 @@ const mongoose = require('mongoose');
 
 
 
-mongoose.connect('mongodb://localhost:27017/apinode');
+mongoose.connect('mongodb://localhost:27017/apimusique');
 
 app.use(express.urlencoded());
 app.use(express.json());
 
-//Route pour le CRUD des Posts
-const postRoute = require('./routes/musicRoute');
-app.use('/musics', postRoute);
+//Route pour le CRUD des Musique
+const musicRoute = require('./routes/musicRoute');
+app.use('/musics', musicRoute);
 
-//Route pour le CRUD des Comments
-const commentRoute = require('./routes/commentRoute');
-app.use('/', commentRoute);
+//Route pour le CRUD des Votes
+const voteRoute = require('./routes/voteRoute');
+app.use('/', voteRoute);
 
 
 app.listen(port, () => {
