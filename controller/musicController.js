@@ -12,6 +12,17 @@ exports.listAllMusic = async (req, res) => {
     }
 
 }
+exports.findAMusic = async (req, res) => {
+
+    try {
+        const music = await Music.findById(req.params.id_music);
+        res.status(200).json(music);
+    } catch (error) {
+        res.status(500)
+        console.log(error);
+        res.json({message: "Error while retriving the data"})
+    }
+}
 
 exports.createAMusic = async (req, res) => {
 
