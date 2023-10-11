@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 let voteSchema = new Schema ({
     note: {
         type: Number,
-        required: true
+        default: "1"
     
     },
     created_at: {
